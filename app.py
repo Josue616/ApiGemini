@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
 import google.generativeai as genai
 
 app = Flask(__name__)
+CORS(app)
 
 genai.configure(api_key=os.environ["API_KEY"])
 
